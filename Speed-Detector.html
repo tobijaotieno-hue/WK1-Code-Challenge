@@ -33,6 +33,13 @@
             // Define how many km/h equals 1 point
             const kmPerPoint = 5;
 
+            // Check if the entered value is not a number
+            if (isNaN(speed)) {
+                // Display error message if input is invalid
+                document.getElementById("result").innerText = "Please enter a valid number.";
+                return;
+            }
+
         }
   </script>
 
