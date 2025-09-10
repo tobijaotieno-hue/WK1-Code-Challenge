@@ -23,6 +23,11 @@
             // Declare a variable to store the grade
             let grade;
 
+            // Check for invalid input (not a number, less than 0, or greater than 100)
+            if (marks > 100 || marks < 0 || isNaN(marks)) {
+                grade = 'Invalid input. Enter a number between 0 and 100';
+                
+
 
         }
  </script>
