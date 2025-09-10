@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salary Calculator</title>
+    <title>Net Salary Calculator</title>
 </head>
-Net Salaru Calculator <br>
-<h1>Net Salary Calculator (Kenya, 2025)</h1>
-<!-- Input for basic salary -->
+<body>
+    <!-- Heading for Net Salary Calculator -->
+    <h2>Net Salary Calculator</h2>
+    <br>
+    <!-- Input for basic salary -->
     <label for="basicSalary">Basic Salary:</label><br>
     <input type="number" id="basicSalary" placeholder="Enter basic salary" /><br>
     <!-- Input for benefits -->
     <label for="benefits">Benefits:</label><br>
     <input type="number" id="benefits" placeholder="Enter benefits" /><br>
-     <!-- Button to calculate net salary -->
+    <!-- Button to calculate net salary -->
     <button onclick="calculateNetSalary()">Calculate Net Salary</button>
-     <!-- Display the result -->
+    <!-- Area to display the result -->
     <div id="salaryResult"></div>
-
 <script>
-    // Function to calculate PAYE (Tax) based on KRA rates
-    function getPAYE(taxable) {
-      let tax = 0;
-      // First band: 10% for income up to 24,000
+        // Function to calculate PAYE (Tax) based on KRA rates
+        function calculatePAYE(grossSalary) {
+            let tax = 0;
+            // First band: 10% for income up to 24,000
             if (grossSalary <= 24000) {
                 tax = grossSalary * 0.1;
             }
-             // Second band: 25% for income between 24,001 and 32,333
+            // Second band: 25% for income between 24,001 and 32,333
             else if (grossSalary <= 32333) {
                 tax = (24000 * 0.1) + ((grossSalary - 24000) * 0.25);
             }
@@ -35,9 +36,9 @@ Net Salaru Calculator <br>
                 tax = (24000 * 0.1) + ((32333 - 24000) * 0.25) + ((grossSalary - 32333) * 0.3);
             }
             return tax;
-    }
-    // Function to calculate NHIF deduction based on gross salary
-    function calculateNHIF(grossSalary) {
+        }
+        // Function to calculate NHIF deduction based on gross salary
+        function calculateNHIF(grossSalary) {
             // NHIF rates based on salary bands
             if (grossSalary <= 5999) return 150;
             if (grossSalary <= 7999) return 300;
@@ -57,11 +58,3 @@ Net Salaru Calculator <br>
             if (grossSalary <= 99999) return 1600;
             return 1700;
         }
-
-</script>
-
-
-<body>
-    
-</body>
-</html>
