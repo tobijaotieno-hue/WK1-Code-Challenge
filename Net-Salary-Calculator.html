@@ -18,8 +18,22 @@ Net Salaru Calculator <br>
     <div id="salaryResult"></div>
 
 <script>
+    // Function to calculate PAYE (Tax) based on KRA rates
     function getPAYE(taxable) {
       let tax = 0;
+      // First band: 10% for income up to 24,000
+            if (grossSalary <= 24000) {
+                tax = grossSalary * 0.1;
+            }
+             // Second band: 25% for income between 24,001 and 32,333
+            else if (grossSalary <= 32333) {
+                tax = (24000 * 0.1) + ((grossSalary - 24000) * 0.25);
+            }
+            // Third band: 30% for income above 32,333
+            else {
+                tax = (24000 * 0.1) + ((32333 - 24000) * 0.25) + ((grossSalary - 32333) * 0.3);
+            }
+            return tax;
     }
 </script>
 
