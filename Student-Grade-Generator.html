@@ -26,7 +26,28 @@
             // Check for invalid input (not a number, less than 0, or greater than 100)
             if (marks > 100 || marks < 0 || isNaN(marks)) {
                 grade = 'Invalid input. Enter a number between 0 and 100';
-                
+            }
+
+              // Check if marks are greater than 79
+            else if (marks > 79) {
+                grade = "Grade A";
+            } 
+            // Check if marks are between 60 and 79
+            else if (marks >= 60) {
+                grade = "Grade B";
+            } 
+            // Check if marks are between 49 and 59
+            else if (marks >= 49) {
+                grade = "Grade C";
+            } 
+            // Check if marks are between 40 and 48
+            else if (marks >= 40) {
+                grade = "Grade D";
+            } 
+            // If marks are below 40
+            else {
+                grade = "Grade E";
+            }
 
 
         }
